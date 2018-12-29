@@ -12,3 +12,4 @@ COPY apache2.conf /etc/apache2/
 COPY other-vhosts-access-log.conf /etc/apache2/conf-available/
 RUN rm -f /etc/apache2/sites-enabled/*
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+RUN echo test
