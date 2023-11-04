@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=Europe/Paris
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN echo "deb http://ftp.debian.org/debian bookworm-backports main" >> /etc/apt/sources.list
-RUN apt-get update && apt-get -y install apache2 && apt-get -y install python-certbot-apache -t bookworm-backports
+RUN apt-get update && apt-get -y install apache2 && apt-get -y install python3-certbot-apache -t bookworm-backports
 RUN a2enmod ssl proxy proxy_http rewrite headers proxy_wstunnel
 EXPOSE 80
 EXPOSE 443
